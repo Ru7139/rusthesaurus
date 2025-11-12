@@ -1,0 +1,8 @@
+[package]
+name = "usurrealdb"
+version = "0.1.0"
+edition.workspace = true
+rust-version.workspace = true
+
+[dependencies]
+surrealdb = { workspace = true, features = [] }
