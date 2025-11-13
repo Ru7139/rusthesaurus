@@ -69,18 +69,48 @@ fn debug() {
         location_y: f64,
         location_z: f64,
     }
+
+    #[rustfmt::skip]
     impl BlackholeRocket {
         fn new(speed: f64, location_x: f64, location_y: f64, location_z: f64) -> BlackholeRocket {
-            BlackholeRocket {
-                speed,
-                location_x,
-                location_y,
-                location_z,
-            }
+                BlackholeRocket { speed, location_x, location_y, location_z }
         }
     }
     println!(
         "The name of Cosmos Rocket is {:#?}",
-        BlackholeRocket::new(0f64, 1f64, 1f64, 1f64)
+        BlackholeRocket::new(0f64, 1f64, 2f64, 3f64)
     );
+}
+
+// at your beginning
+// do not have to understand it all
+#[test]
+fn fmt_debug() {
+    struct WaterRocket(i32);
+    impl std::fmt::Display for WaterRocket {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            write!(f, "WaterRocket[{}]", self.0)
+        }
+    }
+
+    println!("{}", WaterRocket(5));
+
+    // core::macros
+    // macro_rules! write // matched arm #0
+    // Writes formatted data into a buffer.
+    //
+    // This macro accepts a ‘writer’, a format string, and a list of arguments.
+    // Arguments will be formatted according to the specified format string and the result will be passed to the writer.
+    // The writer may be any value with a write_fmt method;
+    // generally this comes from an implementation of either the [fmt::Write] or the io::Write trait.
+    // The macro returns whatever the write_fmt method returns; commonly a [fmt::Result], or an io::Result.
+
+    struct XYLocation(i32, i32);
+    impl std::fmt::Display for XYLocation {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            write!(f, "XYLocation({},{})", self.0, self.1)
+        }
+    }
+
+    println!("{}", XYLocation(3, 4));
 }
