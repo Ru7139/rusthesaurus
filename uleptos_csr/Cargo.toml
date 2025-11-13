@@ -1,0 +1,12 @@
+[package]
+name = "uleptos_csr"
+version = "0.1.0"
+edition.workspace = true
+rust-version.workspace = true
+
+[dependencies]
+leptos = { workspace = true, features = ["csr"] }
+leptos_router = { workspace = true }
+leptos_router_macro = { workspace = true }
+
+console_error_panic_hook = { workspace = true }
