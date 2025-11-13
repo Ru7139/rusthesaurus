@@ -4,6 +4,8 @@ use rayon::iter::{IntoParallelRefIterator, ParallelIterator};
 pub fn count_all_the_rs_files_and_lines_under_the_rusthesaurus(
     path: &str,
 ) -> Result<(usize, usize), Box<dyn std::error::Error>> {
+    let timer = std::time::Instant::now();
+
     let crate_root = std::path::Path::new(path);
     let crate_toml = crate_root.join("Cargo.toml");
     let toml_string = std::fs::read_to_string(crate_toml)?;
@@ -40,6 +42,8 @@ pub fn count_all_the_rs_files_and_lines_under_the_rusthesaurus(
             || (0usize, 0usize),
             |a: (usize, usize), b: (usize, usize)| (a.0 + b.0, a.1 + b.1),
         );
+
+    println!("RsFileCountingTimer: {:?}", timer.elapsed());
 
     Ok((total_files, total_lines))
 }
