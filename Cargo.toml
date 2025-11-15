@@ -36,8 +36,10 @@ serde_json  = { default-features = false, version = "1.0.145" }
 walkdir     = { default-features = false, version = "2.5.0" }
 chrono      = { default-features = false, version = "0.4.42" }
 image       = { default-features = false, version = "0.25.8" }
+mini-redis  = { default-features = false, version = "0.4.1" }
 
 #[leptos-csr]
 console_error_panic_hook    = { default-features = false, version = "0.1.7" }
 leptos_router               = { default-features = false, version = "0.8.9" }
 leptos_router_macro         = { default-features = false, version = "0.8.6" }
+leptos_meta                 = { default-features = false, version = "*" }
