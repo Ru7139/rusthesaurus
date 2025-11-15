@@ -5,4 +5,10 @@ edition.workspace = true
 rust-version.workspace = true
 
 [dependencies]
-polars = { workspace = true, features = [] }
+polars = { workspace = true, features = ["lazy", "dtype-date", "temporal", "fmt"] }
+
+chrono = { workspace = true, features = [] }
+
+rand = { workspace = true, features = ["thread_rng"] }
+rand_distr = { workspace = true, features = [] }
+rayon = { workspace = true, features = [] }

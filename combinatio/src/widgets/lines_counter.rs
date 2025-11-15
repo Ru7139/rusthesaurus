@@ -19,16 +19,17 @@ pub fn count_all_the_rs_files_and_lines_under_the_rusthesaurus(
         .split(",")
         .map(|x| x.trim().trim_matches('"').to_string())
         .filter(|x| !x.is_empty())
-        .map(|x| crate_root.join(x))
-        .collect::<Vec<std::path::PathBuf>>();
+        .map(|member_name| (member_name.clone(), crate_root.join(member_name)))
+        .collect::<Vec<(String, std::path::PathBuf)>>();
 
     let (total_files, total_lines): (usize, usize) = members_pathbuf_vec
         .par_iter()
-        .map(|path| {
-            walkdir::WalkDir::new(path)
+        .map(|(member_name, path)| {
+            let (files, lines) = walkdir::WalkDir::new(path)
                 .into_iter()
                 .filter_map(|e| e.ok())
                 .filter(|entry| entry.file_type().is_file())
+                .filter(|e| e.path().extension().and_then(|s| s.to_str()) == Some("rs"))
                 .map(|entry| {
                     let file_path = entry.path();
                     let lines_count = std::fs::read_to_string(file_path)
@@ -36,7 +37,15 @@ pub fn count_all_the_rs_files_and_lines_under_the_rusthesaurus(
                         .unwrap_or(0);
                     (1usize, lines_count)
                 })
-                .fold((0, 0), |acc, x| (acc.0 + x.0, acc.1 + x.1))
+                .fold((0, 0), |acc, x| (acc.0 + x.0, acc.1 + x.1));
+            (member_name.clone(), (files, lines))
+        })
+        .map(|(member_name, (files, lines))| {
+            println!(
+                "{:>15} ---> {:>4} files, {:>5} lines)",
+                member_name, files, lines
+            );
+            (files, lines)
         })
         .reduce(
             || (0usize, 0usize),

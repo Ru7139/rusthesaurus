@@ -1,0 +1,10 @@
+[package]
+name = "urand"
+version = "0.1.0"
+edition.workspace = true
+rust-version.workspace = true
+
+[dependencies]
+rand = {workspace = true, features = ["thread_rng"]}
+rand_distr = { workspace = true, features = [] }
+rayon = { workspace = true, features = [] }

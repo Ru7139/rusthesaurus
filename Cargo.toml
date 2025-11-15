@@ -8,6 +8,7 @@ members = [
     "uleptos_csr",
     "uplotters",
     "upolars",
+    "urand",
     "urayon",
     "ureqwest",
     "usqlx",
@@ -23,23 +24,30 @@ rust-version = "1.91.0"
 tokio       = { default-features = false, version = "1.48.0" }
 rayon       = { default-features = false, version = "1.11.0" }
 reqwest     = { default-features = false, version = "0.12.24" }
+polars      = { default-features = false, version = "0.51" }
 sqlx        = { default-features = false, version = "0.8.6" }
 surrealdb   = { default-features = false, version = "2.3.10" }
-polars      = { default-features = false, version = "0.52.0" }
 plotters    = { default-features = false, version = "0.3.7" }
-axum        = { default-features = false, version = "0.8.6" }
+axum        = { default-features = false, version = "0.8.7" }
 actix-web   = { default-features = false, version = "4.11.0" }
-leptos      = { default-features = false, version = "0.8.12" }
 
+
+#[leptos-csr]
+leptos                      = { default-features = false, version = "0.8.12" }
+leptos_router               = { default-features = false, version = "0.8.9" }
+leptos_router_macro         = { default-features = false, version = "0.8.6" }
+leptos_meta                 = { default-features = false, version = "0.8.5" }
+console_error_panic_hook    = { default-features = false, version = "0.1.7" }
+
+#[rand]
+rand        = { default-features = false, version = "0.9.2" }
+rand_distr  = { default-features = false, version = "0.5.1" }
+
+#[serde]
 serde       = { default-features = false, version = "1.0.228" }
 serde_json  = { default-features = false, version = "1.0.145" }
+
 walkdir     = { default-features = false, version = "2.5.0" }
 chrono      = { default-features = false, version = "0.4.42" }
 image       = { default-features = false, version = "0.25.8" }
 mini-redis  = { default-features = false, version = "0.4.1" }
-
-#[leptos-csr]
-console_error_panic_hook    = { default-features = false, version = "0.1.7" }
-leptos_router               = { default-features = false, version = "0.8.9" }
-leptos_router_macro         = { default-features = false, version = "0.8.6" }
-leptos_meta                 = { default-features = false, version = "*" }
