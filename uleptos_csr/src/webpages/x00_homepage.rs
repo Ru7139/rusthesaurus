@@ -5,5 +5,7 @@ use leptos::{
 
 #[component]
 pub fn Homepage() -> impl IntoView {
-    div().child(h3().child("Welcome to Homepage"))
+    div()
+        .attr("id", "Homepage")
+        .child(h3().child("Welcome to Homepage"))
 }

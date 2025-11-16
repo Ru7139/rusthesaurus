@@ -1,0 +1,6 @@
+[build]
+release = true
+
+[tools]
+wasm_opt = "wasm-opt"
+wasm_opt_flags = ["-Oz"]

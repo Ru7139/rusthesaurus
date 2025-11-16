@@ -18,11 +18,13 @@ pub fn App() -> impl IntoView {
             main().child(leptos_router::components::Routes(RoutesProps::builder()
                 .fallback(|| "Page Not Found")
                 .children(ToChildren::to_children(||{(
-                    Route(RouteProps::builder().path(StaticSegment("Home"))
+                    Route(RouteProps::builder()
+                        .path(StaticSegment("Home"))
                         .view(crate::webpages::x00_homepage::Homepage).build()
                     ),
-                    Route(RouteProps::builder().path(StaticSegment("Home"))
-                        .view(crate::webpages::x00_homepage::Homepage).build()
+                    Route(RouteProps::builder()
+                        .path(StaticSegment("User"))
+                        .view(crate::webpages::x01_userpage::UserMainPage).build()
                     ),
                 )})).build()))
             )})).build())

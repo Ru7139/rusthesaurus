@@ -11,3 +11,10 @@ leptos_router_macro = { workspace = true }
 leptos_meta = { workspace = true }
 
 console_error_panic_hook = { workspace = true }
+
+[profile.release]
+lto = true
+opt-level = "z"
+strip = "symbols"
+codegen-units = 1
+panic = "abort"

@@ -6,6 +6,7 @@ use leptos::{
 #[component]
 pub fn NavigateBar() -> impl IntoView {
     nav()
+        .attr("id", "NavigateBar")
         .attr(
             "style",
             concat!(
@@ -17,7 +18,7 @@ pub fn NavigateBar() -> impl IntoView {
             ),
         )
         .child((
-            a().href("/home").child("home"),
             a().href("/Home").child("Home"),
+            a().href("/User").child("User"),
         ))
 }
