@@ -6,6 +6,6 @@ use leptos::{
 #[component]
 pub fn Homepage() -> impl IntoView {
     div()
-        .attr("id", "Homepage")
+        .attr("WebPart", "Homepage")
         .child(h3().child("Welcome to Homepage"))
 }
