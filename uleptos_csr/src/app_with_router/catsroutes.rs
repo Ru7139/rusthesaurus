@@ -18,6 +18,7 @@ macro_rules! non_ssr_route_build {
     };
 }
 
+#[rustfmt::skip]
 #[component]
 pub fn CatsRoutes() -> impl IntoView {
     div().attr("WebPart", "CatsRoutes").child(
@@ -28,6 +29,7 @@ pub fn CatsRoutes() -> impl IntoView {
                     (
                         non_ssr_route_build!("Home", crate::webpages::x00_homepage::Homepage),
                         non_ssr_route_build!("User", crate::webpages::x01_userpage::UserMainPage),
+                        non_ssr_route_build!("LeptosDev",crate::webpages::x99_example::BasicComponts),
                     )
                 }))
                 .build(),
