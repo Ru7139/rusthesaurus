@@ -2,14 +2,14 @@ use std::sync::LazyLock;
 
 use rayon::iter::{IntoParallelIterator, ParallelIterator};
 
-static LAZY_ARRAY: LazyLock<[u32; 1000]> =
+static _LAZY_ARRAY: LazyLock<[u32; 1000]> =
     LazyLock::new(|| std::array::from_fn(|x| (x + 1) as u32));
 
 #[test]
 fn rayon_speed_test() {
-    let vec = (0..65535) // log2(u32::MAX) = 65535
+    let vec = (0..65534) // log2(u32::MAX) = 65535.999
         .into_iter() // 50k * 1k * 4Bytes = 200MB
-        .map(|_| Vec::from(&*LAZY_ARRAY))
+        .map(|_| (1..=1000).collect::<Vec<u32>>())
         .collect::<Vec<Vec<u32>>>();
 
     let timer_normal = std::time::Instant::now();
