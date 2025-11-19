@@ -5,4 +5,5 @@ edition.workspace = true
 rust-version.workspace = true
 
 [dependencies]
-reqwest = { workspace = true, features = [] }
+tokio = {workspace = true, features = ["full"]}
+reqwest = { workspace = true, features = ["rustls-tls"] }
