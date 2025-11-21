@@ -16,25 +16,23 @@ pub fn BasicComponts() -> impl IntoView {
                 h3().child("Basic Components from Leptos-Dev-Book"),
                 p().child("click_collector: ")
                     .child(move || click_collector.get()),
-                progress()
-                    .max(50000u32)
-                    .value(move || click_collector.get()),
+                progress().max(5000u32).value(move || click_collector.get()),
                 br(),
                 button()
                     .on(ev::click, move |_click| {
-                        *click_collector_set.write() += 10000;
+                        *click_collector_set.write() += 1000;
                         vec_clicks_c_set
                             .update(|x| *x = (0..click_collector.get()).collect::<Vec<u32>>());
                     })
                     .class(("red", move || click_collector.get() % 3 == 0))
-                    .child("+10000"),
+                    .child("+1000"),
                 br(),
                 button()
                     .on(ev::click, move |_click| {
                         vec_clicks_c_set.update(|x| {
                             // 只追加新项，不重建整个 Vec
                             let start = x.len() as u32;
-                            x.extend(start..(start + 10000));
+                            x.extend(start..(start + 1000));
                         });
                     })
                     .child("extend +10000"),

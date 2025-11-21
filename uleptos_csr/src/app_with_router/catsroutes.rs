@@ -21,15 +21,17 @@ macro_rules! non_ssr_route_build {
 #[rustfmt::skip]
 #[component]
 pub fn CatsRoutes() -> impl IntoView {
+    use crate::webpages;
+
     div().attr("WebPart", "CatsRoutes").child(
         main().child(leptos_router::components::Routes(
             RoutesProps::builder()
                 .fallback(|| "Page Not Found")
                 .children(ToChildren::to_children(|| {
                     (
-                        non_ssr_route_build!("Home", crate::webpages::x00_homepage::Homepage),
-                        non_ssr_route_build!("User", crate::webpages::x01_userpage::UserMainPage),
-                        non_ssr_route_build!("LeptosDev",crate::webpages::x99_example::BasicComponts),
+                        non_ssr_route_build!("Home", webpages::x00_homepage::Homepage),
+                        non_ssr_route_build!("User", webpages::x01_userpage::UserMainPage),
+                        non_ssr_route_build!("LeptosDev",webpages::x99_example::BasicComponts),
                     )
                 }))
                 .build(),
