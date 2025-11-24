@@ -102,6 +102,7 @@ pub fn general_tushare_post(
 
 #[cfg(test)]
 #[test]
+#[ignore]
 fn tushare_reqwest_test() {
     let client = reqwest::blocking::Client::new();
     let trs = TushareReqwestStruct::new(
@@ -112,5 +113,5 @@ fn tushare_reqwest_test() {
         20251121,
     );
 
-    general_tushare_post(client, &trs).unwrap();
+    let _ = general_tushare_post(client, &trs).unwrap();
 }
