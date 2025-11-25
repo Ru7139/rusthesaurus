@@ -1,12 +1,13 @@
 use serde::Deserialize;
 
 trait WithoutFloat {
-    fn into_u32_without_float(&self) -> u32;
+    fn into_i64_without_float(&self) -> i64;
 }
 
-impl WithoutFloat for f32 {
-    fn into_u32_without_float(&self) -> u32 {
-        (self * 1000.0).round() as u32
+impl WithoutFloat for f64 {
+    fn into_i64_without_float(&self) -> i64 {
+        (self * 1_000.0).round() as i64
+        // (self * 1_000.0).round() as u64
     }
 }
 
@@ -14,30 +15,30 @@ impl WithoutFloat for f32 {
 pub struct TsStockDayK {
     ts_code: String,
     trade_date: String,
-    open: f32,
-    high: f32,
-    low: f32,
-    close: f32,
-    pre_close: f32,
-    change: f32,
-    pct_chg: f32,
-    vol: f32,
-    amount: f32,
+    open: f64,
+    high: f64,
+    low: f64,
+    close: f64,
+    pre_close: f64,
+    change: f64,
+    pct_chg: f64,
+    vol: f64,
+    amount: f64,
 }
 impl TsStockDayK {
     fn into_without_float_struct(self) -> TsStockDayCandleWithoutFloat {
         TsStockDayCandleWithoutFloat {
             ts_code: self.ts_code,
             trade_date: self.trade_date,
-            open: self.open.into_u32_without_float(),
-            high: self.high.into_u32_without_float(),
-            low: self.low.into_u32_without_float(),
-            close: self.close.into_u32_without_float(),
-            pre_close: self.pre_close.into_u32_without_float(),
-            change: self.change.into_u32_without_float(),
-            pct_chg: self.pct_chg.into_u32_without_float(),
-            vol: self.vol.into_u32_without_float(),
-            amount: self.amount.into_u32_without_float(),
+            open: self.open.into_i64_without_float(),
+            high: self.high.into_i64_without_float(),
+            low: self.low.into_i64_without_float(),
+            close: self.close.into_i64_without_float(),
+            pre_close: self.pre_close.into_i64_without_float(),
+            change: self.change.into_i64_without_float(),
+            pct_chg: self.pct_chg.into_i64_without_float(),
+            vol: (self.vol * 1000.0).round() as u64,
+            amount: (self.vol * 1000.0).round() as u64,
         }
     }
 }
@@ -60,17 +61,17 @@ pub struct TsPostStockData {
 
 #[derive(Debug)]
 pub struct TsStockDayCandleWithoutFloat {
-    ts_code: String,
-    trade_date: String,
-    open: u32,
-    high: u32,
-    low: u32,
-    close: u32,
-    pre_close: u32,
-    change: u32,
-    pct_chg: u32,
-    vol: u32,
-    amount: u32,
+    pub ts_code: String,
+    pub trade_date: String,
+    pub open: i64,
+    pub high: i64,
+    pub low: i64,
+    pub close: i64,
+    pub pre_close: i64,
+    pub change: i64,
+    pub pct_chg: i64,
+    pub vol: u64,
+    pub amount: u64,
 }
 
 pub fn des(
@@ -89,6 +90,7 @@ pub fn des(
 
 #[cfg(test)]
 #[test]
+#[ignore]
 fn test_of_des() {
     use super::p03_tushare_single_reqwest::{
         TsApiName, TsParams, TsToken, TushareReqwestStruct, general_tushare_post,

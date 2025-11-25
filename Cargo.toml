@@ -26,7 +26,7 @@ rayon       = { default-features = false, version = "1.11" }
 reqwest     = { default-features = false, version = "0.12" }
 polars      = { default-features = false, version = "0.51" }
 sqlx        = { default-features = false, version = "0.8" }
-surrealdb   = { default-features = false, version = "2.3" }
+surrealdb   = { default-features = false, version = "2.4" }
 plotters    = { default-features = false, version = "0.3" }
 axum        = { default-features = false, version = "0.8" }
 actix-web   = { default-features = false, version = "4.12" }

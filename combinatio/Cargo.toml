@@ -12,4 +12,4 @@ reqwest = { workspace = true, features = ["blocking", "json"] }
 serde = { workspace = true, features = ["derive"] }
 serde_json = { workspace = true, features = [] }
 
-polars = { workspace = true, features = ["lazy"] }
+polars = { workspace = true, features = ["lazy", "fmt"] }
