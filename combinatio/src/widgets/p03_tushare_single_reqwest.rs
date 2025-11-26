@@ -106,12 +106,13 @@ pub fn general_tushare_post(
 fn tushare_reqwest_test() {
     let client = reqwest::blocking::Client::new();
     let trs = TushareReqwestStruct::new(
-        TsApiName::Daily.into_string(),
+        TsApiName::Shibor.into_string(),
         TsToken::Ru.into_string(),
-        TsParams::StockDailyNormal.into_string(),
-        20251121,
+        TsParams::Shibor.into_string(),
+        20240101,
         20251121,
     );
 
-    let _ = general_tushare_post(client, &trs).unwrap();
+    let vec = general_tushare_post(client, &trs).unwrap();
+    println!("{}", vec);
 }

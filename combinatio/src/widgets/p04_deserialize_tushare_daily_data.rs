@@ -7,7 +7,6 @@ trait WithoutFloat {
 impl WithoutFloat for f64 {
     fn into_i64_without_float(&self) -> i64 {
         (self * 1_000.0).round() as i64
-        // (self * 1_000.0).round() as u64
     }
 }
 

@@ -1,4 +1,4 @@
-use super::p04_deserialize_tushare_data::TsStockDayCandleWithoutFloat;
+use super::p04_deserialize_tushare_daily_data::TsStockDayCandleWithoutFloat;
 use polars::{
     df,
     error::PolarsResult,
@@ -41,15 +41,13 @@ impl ConverToLazyFrame for Vec<TsStockDayCandleWithoutFloat> {
     }
 }
 
-// pub fn cover_tushare_into_lazyframe() -> Result<LazyFrame, Box<dyn std::error::Error>> {}
-
 #[cfg(test)]
 #[test]
 fn test_of_lazyframe() {
     use super::p03_tushare_single_reqwest::{
         TsApiName, TsParams, TsToken, TushareReqwestStruct, general_tushare_post,
     };
-    use super::p04_deserialize_tushare_data::des;
+    use super::p04_deserialize_tushare_daily_data::des;
 
     let client = reqwest::blocking::Client::new();
     let trs = TushareReqwestStruct::new(
@@ -64,6 +62,6 @@ fn test_of_lazyframe() {
     let vec = des(rqs_msg).unwrap();
 
     let lazyf = vec.into_lazyframe().unwrap();
-    // println!("{}", lazyf.explain(true).unwrap());
+
     println!("{}", lazyf.collect().unwrap());
 }
