@@ -24,12 +24,14 @@ rust-version = "1.91.0"
 tokio       = { default-features = false, version = "1.48" }
 rayon       = { default-features = false, version = "1.11" }
 reqwest     = { default-features = false, version = "0.12" }
-polars      = { default-features = false, version = "0.51" }
 sqlx        = { default-features = false, version = "0.8" }
 surrealdb   = { default-features = false, version = "2.4" }
 plotters    = { default-features = false, version = "0.3" }
 axum        = { default-features = false, version = "0.8" }
 actix-web   = { default-features = false, version = "4.12" }
+
+#[polars]
+polars = { version = "0.51", features = ["lazy", "temporal", "dtype-full", "fmt"] }
 
 #[leptos-csr]
 leptos              = { default-features = false, version = "0.8" }

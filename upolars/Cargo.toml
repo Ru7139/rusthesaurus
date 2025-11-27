@@ -5,7 +5,7 @@ edition.workspace = true
 rust-version.workspace = true
 
 [dependencies]
-polars = { workspace = true, features = ["lazy", "dtype-date", "temporal", "fmt"] }
+polars = { workspace = true }
 
 chrono = { workspace = true, features = [] }
 

@@ -13,4 +13,3 @@ leptos_meta = { workspace = true }
 console_error_panic_hook = { workspace = true }
 
 uuid = { workspace = true, features = ["v4", "js"] }
-# `js`, `rng-getrandom`, or `rng-rand`
