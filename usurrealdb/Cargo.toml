@@ -5,8 +5,11 @@ edition.workspace = true
 rust-version.workspace = true
 
 [dependencies]
-surrealdb = { workspace = true, features = ["kv-mem"] }
+surrealdb = { workspace = true, features = ["kv-mem", "protocol-http"] }
 tokio = { workspace = true, features = ["macros", "rt-multi-thread", "net"] }
 serde = { workspace = true, features = ["derive"] }
 axum  = { workspace = true, features = ["http2", "tokio"] }
 reqwest = { workspace = true, features = [] }
+serde_json = { workspace = true, features = [] }
+regex = { workspace = true, features = [] }
+futures = { workspace = true, features = [] }
