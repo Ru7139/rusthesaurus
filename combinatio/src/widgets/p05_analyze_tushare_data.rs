@@ -43,6 +43,7 @@ impl ConverToLazyFrame for Vec<TsStockDayCandleWithoutFloat> {
 
 #[cfg(test)]
 #[test]
+#[ignore]
 fn test_of_lazyframe() {
     use super::p03_tushare_single_reqwest::{
         TsApiName, TsParams, TsToken, TushareReqwestStruct, general_tushare_post,

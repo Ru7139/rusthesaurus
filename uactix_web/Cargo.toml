@@ -5,4 +5,6 @@ edition.workspace = true
 rust-version.workspace = true
 
 [dependencies]
-actix-web = { workspace = true, features = [] }
+actix-web = { workspace = true, features = ["macros"] }
+tokio = { workspace = true, features = ["full"] }
+reqwest = { workspace = true, features = [] }
