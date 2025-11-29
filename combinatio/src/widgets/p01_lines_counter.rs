@@ -42,7 +42,7 @@ pub fn count_all_the_rs_files_and_lines_under_the_rusthesaurus(
         })
         .map(|(member_name, (files, lines))| {
             println!(
-                "{:>15} ---> {:>4} files, {:>5} lines)",
+                "{:>15} ---> {:>4} files, {:>5} lines",
                 member_name, files, lines
             );
             (files, lines)
