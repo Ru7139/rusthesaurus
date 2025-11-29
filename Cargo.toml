@@ -4,7 +4,8 @@ members = [
     "combinatio",
     "essentia",
     "uactix_web",
-    "uaxum", "ufutures",
+    "uaxum",
+    "ufutures",
     "uleptos_csr",
     "uplotters",
     "upolars",
@@ -21,33 +22,33 @@ edition = "2024"
 rust-version = "1.91.0"
 
 [workspace.dependencies]
+#[Asynchronous & Concurrent & Parallel]
 futures     = { default-features = false, version = "0.3" }
 tokio       = { default-features = false, version = "1.48" }
 rayon       = { default-features = false, version = "1.11" }
-reqwest     = { default-features = false, version = "0.12" }
+#[database]
 sqlx        = { default-features = false, version = "0.8" }
 surrealdb   = { default-features = false, version = "2.4" }
-plotters    = { default-features = false, version = "0.3" }
+#[backend]
 axum        = { default-features = false, version = "0.8" }
 actix-web   = { default-features = false, version = "4.12" }
-
 #[polars]
 polars = { version = "0.51", features = ["lazy", "temporal", "dtype-full", "fmt"] }
-
 #[leptos-csr]
 leptos              = { default-features = false, version = "0.8" }
 leptos_router       = { default-features = false, version = "0.8" }
 leptos_router_macro = { default-features = false, version = "0.8" }
 leptos_meta         = { default-features = false, version = "0.8" }
 console_error_panic_hook    = { default-features = false, version = "0.1" }
-
 #[rand]
 rand        = { default-features = false, version = "0.9" }
 rand_distr  = { default-features = false, version = "0.5" }
-
-#[serde]
+#[net request & serde]
+reqwest     = { default-features = false, version = "0.12" }
 serde       = { default-features = false, version = "1.0.228" }
 serde_json  = { default-features = false, version = "1.0.145" }
+#[draw a chart]
+plotters    = { default-features = false, version = "0.3" }
 
 walkdir     = { default-features = false, version = "2.5" }
 chrono      = { default-features = false, version = "0.4" }
