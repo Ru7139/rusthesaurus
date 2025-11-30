@@ -33,7 +33,7 @@ surrealdb   = { default-features = false, version = "2.4" }
 axum        = { default-features = false, version = "0.8" }
 actix-web   = { default-features = false, version = "4.12" }
 #[polars]
-polars = { version = "0.51", features = ["lazy", "temporal", "dtype-full", "fmt"] }
+polars = { version = "0.51", features = ["lazy", "temporal", "dtype-date", "fmt"] }
 #[leptos-csr]
 leptos              = { default-features = false, version = "0.8" }
 leptos_router       = { default-features = false, version = "0.8" }
