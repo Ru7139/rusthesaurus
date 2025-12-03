@@ -54,5 +54,5 @@ walkdir     = { default-features = false, version = "2.5" }
 chrono      = { default-features = false, version = "0.4" }
 image       = { default-features = false, version = "0.25" }
 mini-redis  = { default-features = false, version = "0.4" }
-uuid        = { default-features = false, version = "1.18" }
+uuid        = { default-features = false, version = "1.19" }
 regex       = { default-features = false, version = "1.12" }

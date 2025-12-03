@@ -8,6 +8,7 @@ mod n06_conversion;
 mod n07_expressions;
 mod n08_flowofcontrol;
 mod n09_functions;
+mod n09_hof;
 mod n10_modules;
 mod n11_crates;
 mod n12_cargo;
