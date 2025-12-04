@@ -1,6 +1,6 @@
 #[test]
 fn long_hof() {
-    let _vec = (0..100)
+    let mut vec = (0..100)
         .into_iter()
         .enumerate()
         .map(|(idx, value)| (idx, value * 2))
@@ -12,6 +12,10 @@ fn long_hof() {
                 Some((i, v * 100))
             }
         })
-        .flat_map(|(i, v)| [i as i32, v])
+        .flat_map(|(i, v)| [i as i32 + v])
         .collect::<Vec<i32>>();
+
+    vec.sort_by(|a, b| a.cmp(b));
+
+    dbg!(vec);
 }
