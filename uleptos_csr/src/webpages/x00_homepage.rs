@@ -16,8 +16,7 @@ pub fn Homepage() -> impl IntoView {
             "background-color: rgba(0, 0, 0, 0.4);",
             "background-blend-mode: darken;",
         ))
-        .child((
-            crate::navigate_bar::nvbar::NavigateBar(),
+        .child(
             div()
                 .style(concat!(
                     "padding: 40px;",
@@ -52,5 +51,5 @@ pub fn Homepage() -> impl IntoView {
                     h3().style("center").child("Welcome to Homepage"),
                     h3().style("center").child("Welcome to Homepage"),
                 )),
-        ))
+        )
 }
