@@ -23,7 +23,8 @@ macro_rules! non_ssr_route_build {
 pub fn CatsRoutes() -> impl IntoView {
     use crate::webpages;
 
-    div().attr("WebPart", "CatsRoutes").child(
+    div().attr("WebPart", "CatsRoutes")
+        .child(
         main().child(leptos_router::components::Routes(
             RoutesProps::builder()
                 .fallback(|| "Page Not Found")

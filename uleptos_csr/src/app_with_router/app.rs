@@ -1,4 +1,4 @@
-use leptos::html::{ElementChild, div, hr};
+use leptos::html::{ElementChild, div};
 use leptos::prelude::*;
 use leptos_meta::{MetaProps, StylesheetProps, TitleProps};
 use leptos_router::components::{Router, RouterProps};
@@ -14,7 +14,6 @@ pub fn App() -> impl IntoView {
 
         Router(RouterProps::builder().children(ToChildren::to_children(|| {(
             crate::navigate_bar::nvbar::NavigateBar(),
-            hr(),
             crate::app_with_router::catsroutes::CatsRoutes(),
             )})).build())
     ))
