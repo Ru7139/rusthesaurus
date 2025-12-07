@@ -23,13 +23,10 @@ pub fn NavigateBar() -> impl IntoView {
                 "align-items:center;",     // 让垂直方向也对齐得更好
             ))
             .child((
-                "|",
                 a().href("/Home").target("_self").child("Home"), // 在当前页打开，_blank在新的标签页打开
-                "|",
                 a().href("/User").child("User"),
                 "|",
                 a().href("/LeptosDev").child("Leptos-Dev-Book"),
-                "|",
             )),
     )
 }

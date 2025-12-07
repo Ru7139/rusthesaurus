@@ -11,6 +11,7 @@ pub fn Homepage() -> impl IntoView {
             "background-image: url('/public/20230917_192938_L1001333.avif');",
             "background-size: cover;",
             "background-position: center;",
+            "background-attachment: fixed;",
             "width: 100%;",
             "height: 100vh;",
             "background-color: rgba(0, 0, 0, 0.4);",
@@ -28,17 +29,6 @@ pub fn Homepage() -> impl IntoView {
                     "box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);", // 玻璃阴影
                 ))
                 .child((
-                    h3().style("center").child("Welcome to Homepage"),
-                    h3().style("center").child("Welcome to Homepage"),
-                    h3().style("center").child("Welcome to Homepage"),
-                    h3().style("center").child("Welcome to Homepage"),
-                    h3().style("center").child("Welcome to Homepage"),
-                    h3().style("center").child("Welcome to Homepage"),
-                    h3().style("center").child("Welcome to Homepage"),
-                    h3().style("center").child("Welcome to Homepage"),
-                    h3().style("center").child("Welcome to Homepage"),
-                    h3().style("center").child("Welcome to Homepage"),
-                    h3().style("center").child("Welcome to Homepage"),
                     h3().style("center").child("Welcome to Homepage"),
                     h3().style("center").child("Welcome to Homepage"),
                     h3().style("center").child("Welcome to Homepage"),
