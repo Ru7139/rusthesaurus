@@ -11,7 +11,8 @@ members = [
     "upolars",
     "urand",
     "urayon",
-    "ureqwest", "urusqlite",
+    "ureqwest",
+    "urusqlite",
     "usqlx",
     "usurrealdb",
     "utokio"
