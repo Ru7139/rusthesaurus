@@ -13,6 +13,7 @@ members = [
     "urayon",
     "ureqwest",
     "urusqlite",
+    "uscreencapturekit",
     "usqlx",
     "usurrealdb",
     "utokio"
