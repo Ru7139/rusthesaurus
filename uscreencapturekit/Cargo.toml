@@ -5,4 +5,4 @@ edition.workspace = true
 rust-version.workspace = true
 
 [dependencies]
-screencapturekit = { version = "1", features = ["macos_26_0"] }
+screencapturekit = { version = "1.5", features = ["macos_26_0"] }
