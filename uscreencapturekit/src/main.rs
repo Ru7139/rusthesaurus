@@ -4,6 +4,7 @@ struct Handler;
 
 impl SCStreamOutputTrait for Handler {
     fn did_output_sample_buffer(&self, sample: CMSampleBuffer, _type: SCStreamOutputType) {
+        // println!("{:?}", sample.image_buffer().unwrap().pixel_format());
         println!("Received frame at {:?}", sample.presentation_timestamp());
     }
 }
