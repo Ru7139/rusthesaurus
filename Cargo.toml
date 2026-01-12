@@ -12,7 +12,6 @@ members = [
     "urand",
     "urayon",
     "ureqwest",
-    "urusqlite",
     "uscreencapturekit",
     "usqlx",
     "usurrealdb",
@@ -29,7 +28,6 @@ futures     = { default-features = false, version = "0.3" }
 tokio       = { default-features = false, version = "1.48" }
 rayon       = { default-features = false, version = "1.11" }
 #[database]
-rusqlite    = { default-features = false, version = "0.38" }
 sqlx        = { default-features = false, version = "0.8" }
 sqlx-macros = { default-features = false, version = "0.8" }
 surrealdb   = { default-features = false, version = "2.4" }
