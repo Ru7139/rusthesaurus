@@ -46,7 +46,7 @@ console_error_panic_hook    = { default-features = false, version = "0.1" }
 rand        = { default-features = false, version = "0.9" }
 rand_distr  = { default-features = false, version = "0.5" }
 #[net request & serde]
-reqwest     = { default-features = false, version = "0.12" }
+reqwest     = { default-features = false, version = "0.12" } # 0.13
 serde       = { default-features = false, version = "1.0.228" }
 serde_json  = { default-features = false, version = "1.0.145" }
 #[draw a chart]
